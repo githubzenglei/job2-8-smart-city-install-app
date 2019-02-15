@@ -1,0 +1,52 @@
+page-home {
+
+    .scroll-content{
+        // background-color: #453db9da !important;
+        background-image: url(../assets/imgs/bg.png);
+    }
+
+    .bg-color {
+    // background: #453db9da;
+        // background-color: #453db9da !important;
+    // background:linear-gradient(45deg,#453db9da,#453db9da,#7482c0);
+    }
+    .hearder {
+        position: relative;
+        padding: 20px 25px;
+        .more {
+            position: absolute;
+            right: 25px;
+        }
+    }
+    .body {
+        padding: 0 25px;
+        .title {
+            color: #fff;
+        }
+        .btngrop {
+            height: 300px;
+            ion-list{
+            
+                text-align: center;
+            }
+            ion-icon{
+                font-size: 3.2em;
+            }
+            .span-text {
+                display: inline-block;
+                width: 150px;
+                font-size: 18px;
+
+            }
+            button {
+                width: 100%;
+                height: 54px;
+                margin: 30px 0;
+            }
+        }
+        .btnitem {
+            display: block;
+        }
+
+    }
+}

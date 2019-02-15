@@ -1,0 +1,84 @@
+<!--
+  Generated template for the DevicePositionPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>修改位置绑定</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div class="mask box-flex align-items-center justify-content-center" *ngIf="binding !== 0">
+    <div class="waiting box-flex align-items-center justify-content-center bind-parent">
+      <!-- <div *ngIf="binding == 1">
+          <h2>设置中</h2>
+        </div> -->
+      <div *ngIf="binding == 2">
+        <span class="bind-ok"></span>
+        <h2>安装完成</h2>
+      </div>
+    </div>
+
+  </div>
+<div style="min-height: 77%">
+    <div class="necessary" style="height: 20px;">{{error}}</div>
+    <div class="wrap">
+      <span class="necessary">*</span><span>&nbsp;</span>
+      <label for="设备编号">设备编号:</label>
+      <span>{{deviceName}}</span>
+    
+    
+    </div>
+    <div class="wrap">
+      <span class="necessary">*</span><span>&nbsp;</span>
+      <label for="设备编号">设备型号:</label>
+      <span>{{gwmodelIdName}}</span>
+    
+    
+    </div>
+    
+    <div>
+      <div class="wrap">
+        <span class="necessary">*</span>
+        <label for="安装点编号">安装点编号:</label>
+        <input type="text" placeholder="请输入安装点编号" class="form-control-input" [(ngModel)]="position.number" [ngModelOptions]="{standalone: true}"
+          (ngModelChange)="valueChange($event)" />
+        <button ion-button small class="form-control-search-btn" (click)="getPosition(position.number)">
+          <ion-icon ios="ios-search" md="md-search"></ion-icon>
+        </button>
+    
+      </div>
+    
+    
+      <div class="wrap">
+        <!-- <span class="necessary">*</span> -->
+        <span>&nbsp;</span>
+        <label for="安装点名称">安装点名称:</label>
+        <span class="readonly-span">{{position.name}}</span>
+        <!-- <input type="text" readonly  [(ngModel)]="position.name" [ngModelOptions]="{standalone: true}" /> -->
+      </div>
+    
+      <div class="wrap">
+        <!-- <span class="necessary">*</span> -->
+        <span>&nbsp;</span>
+        <label for="安装点经纬">安装点经纬:</label>
+        <span class="readonly-span"> {{position.point}}</span>
+        <!-- <input type="text"  readonly  [(ngModel)]="position.point" [ngModelOptions]="{standalone: true}" /> -->
+      </div>
+      <div class="wrap">
+        <div #map7 id="map_container7" class="map-container-7"></div>
+      </div>
+    
+    </div>
+</div>
+
+  <button ion-button full (click)="bindPosition()" *ngIf="binding == 0">绑定</button>
+  <!-- <button ion-button full  *ngIf="binding == 1" color="darklingt" disabled>等待({{countDown}})</button> -->
+  <button ion-button full (click)="bindOver()" *ngIf="binding == 2">完成</button>
+</ion-content>

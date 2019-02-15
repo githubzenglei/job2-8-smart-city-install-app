@@ -1,0 +1,87 @@
+<!--
+  Generated template for the GatewayPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>安装网关</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div class="mask box-flex align-items-center justify-content-center" *ngIf="binding !== 0">
+    <div class="waiting box-flex align-items-center justify-content-center bind-parent">
+      <!-- <div *ngIf="binding == 1">
+        <h2>绑定中</h2>
+      </div> -->
+
+      <div *ngIf="binding == 2" >
+        <span class="bind-ok"></span>
+        <h2>绑定成功</h2>
+      </div>
+    </div>   
+  </div>
+ <div style="min-height: 77%">
+      <div style="padding: 5px 0;cursor: pointer;" (click)="getGPS()">
+        <ion-icon name="pin" style="padding-right:5px;"></ion-icon>{{addr}}
+      </div>
+      <div class="necessary" style="height: 20px;"><span *ngIf="error && error !== ''">错误提示：</span>{{error}}</div>
+      <div class="wrap">
+        <span>&nbsp;&nbsp;</span>
+        <span class="necessary">*</span>
+        <label for="产品型号">网关型号:</label>
+        <select name="profile" [(ngModel)]="currentGWModel" (change)="deviceTypeChange(currentGWModel)" class="form-control form-control-input"
+          style="width: 198px;">
+          <option *ngFor="let index of deviceGWModels" [ngValue]="index">
+            {{ index.name }}
+          </option>
+        </select>
+      
+      </div>
+      <div class="wrap">
+        <span>&nbsp;&nbsp;</span>
+        <span class="necessary">*</span>
+        <label for="网关编号">网关编号:</label>
+        <input type="text" placeholder="请输入编号或扫描二维码" class="form-control-input" style="width: 198px;" [(ngModel)]="gateway.deviceName"
+          [ngModelOptions]="{standalone: true}" (ngModelChange)="valueChange($event)" />
+        <span class="barcode-span lsq-cursor" (click)="qrScanners()">
+      
+        </span>
+      </div>
+      
+      <div class="wrap">
+        <span class="necessary">*</span>
+        <label for="安装点编号">安装点编号:</label>
+        <input type="text" placeholder="请输入安装点编号" class="form-control-input" style="width: 165px;" [(ngModel)]="position.id"
+          [ngModelOptions]="{standalone: true}" (ngModelChange)="valueChange($event)" />
+        <button ion-button small class="form-control-search-btn" (click)="getPosition(position.id)">
+          <ion-icon ios="ios-search" md="md-search"></ion-icon>
+        </button>
+      
+      </div>
+      
+      
+      <div class="wrap">
+        <span>&nbsp;</span>
+        <label for="安装点名称">安装点名称:</label>
+        <span class="readonly-span">{{position.name}}</span>
+      </div>
+      
+      <div class="wrap">
+        <span>&nbsp;</span>
+        <label for="安装点经纬">安装点经纬:</label>
+        <span class="readonly-span"> {{position.point}}</span>
+      </div>
+      <div class="wrap">
+        <div #map5 id="map_container5" class="map-container-5"></div>
+      </div>
+ </div>
+
+  <button ion-button full (click)="bindPosition()" *ngIf="binding == 0">绑定</button>
+  <button ion-button full (click)="bindOver()" *ngIf="binding == 2">完成</button>
+</ion-content>

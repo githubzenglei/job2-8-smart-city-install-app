@@ -1,0 +1,52 @@
+<!--
+  Generated template for the IndexPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!-- <ion-header>
+
+  <ion-navbar>
+    <ion-title>index</ion-title>
+  </ion-navbar>
+
+</ion-header> -->
+
+
+<ion-content class="bg-color">
+  <div class="hearder bg-color">
+    <img src="../../assets/imgs/xylg-logo.png" class="logo">
+    <button ion-button icon-only (click)="presentPopover($event)" class="more">
+      <ion-icon name="ios-more-outline"></ion-icon>
+    </button>
+    <!-- <ion-list>
+          <ion-item>
+            <ion-select [(ngModel)]="gender" interface="popover">
+              <ion-option value="f">Female</ion-option>
+              <ion-option value="m">Male</ion-option>
+            </ion-select>
+          </ion-item>
+    </ion-list> -->
+
+  </div>
+  <div class="body bg-color">
+    <h2 class="title">CSG</h2>
+    <h2 class="title">智能安装系统</h2>
+    <div class="btngrop box-flex align-items-center justify-content-center">
+      <ion-list>
+        <button ion-button round>
+          <span><ion-icon  name="md-wifi"></ion-icon></span>
+          <span class="span-text " (click)="goToGatewayPage()">安装网关</span></button>
+        <button ion-button round>
+          <span ><ion-icon ios="logo-instagram" md="logo-instagram"></ion-icon></span>
+          <span class="span-text " (click)="goToSubDevicePage()">安装子设备</span></button>
+      </ion-list>
+      <!-- <div class="btnitem box-flex" ><button ion-button round>Round Button</button></div>
+      <div class="btnitem box-flex"><button ion-button round>Round Button</button></div> -->
+
+
+    </div>
+  </div>
+
+
+</ion-content>

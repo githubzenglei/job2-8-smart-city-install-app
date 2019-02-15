@@ -1,0 +1,55 @@
+page-login {
+.lsq-warp-ios{
+    height: calc(100vh - 44px);
+ }
+ .lsq-warp-md{
+    height: calc(100vh - 56px);
+ }
+.header-md{
+    text-align: center;
+}
+ .xylg-logo {
+     margin: 0 auto;
+ }
+ .lsq-list {
+     width: 100%;
+ }
+ .scroll-content {
+     padding-bottom: 0px !important;
+ }
+ .lsq-error{
+     color: red;
+ }
+ .login-input{
+    border: 1px #ccc solid;
+    height: 2.8em;
+    font-size: 1.6rem;
+    color: #fff;
+    background-color: #f4f4f4;
+    margin: 2.4rem 3.2rem;
+    border-radius: 64px;
+    padding: 0 2.6rem;
+    position: relative;
+    ion-icon {
+        position: absolute;
+        left: 13px;
+        top: 5px;
+        color: #ccc;
+        font-size: 3.2rem;
+    }
+
+ }
+ .login-title {
+     height: 50px;
+     line-height: 50px;
+
+ }
+ .login-click {
+    height: 2.8em;   
+    padding: 0 3.2rem;
+    button {
+        border-radius: 64px;
+    }
+ }
+
+}

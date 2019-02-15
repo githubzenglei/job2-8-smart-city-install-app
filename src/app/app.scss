@@ -1,0 +1,203 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+body ，form, input, optgroup, select{
+    color: #333;
+    // font-family: "Microsoft YaHei","宋体",Arial,"\5B8B\4F53",Helvetica,sans-serif;
+    font-family:"Microsoft Yahei",微软雅黑,"Helvetica Neue",Arial,sans-serif;
+    font-size: 14px;
+
+}
+
+html,
+
+body.transparent-body,
+
+.transparent-body,
+
+.transparent-body ion-app,
+
+.transparent-body .app-root,
+
+.transparent-body ion-nav,
+
+.transparent-body .ion-page,
+
+.transparent-body .nav-decor,
+
+.transparent-body ion-content,
+
+.transparent-body .viewscan,
+
+.transparent-body .fixed-content,
+
+.transparent-body .scroll-content {
+
+background-color: transparent !important;
+
+background: transparent!important;
+
+}
+
+.lsq-cursor {
+    cursor: pointer;
+}
+ .text-center {
+     text-align: center;
+ }
+ .box-flex{
+  display: flex;
+ }
+ .align-items-center {
+    align-items: center!important;//align-items属性定义项目在交叉轴上如何对齐。
+ }
+ .justify-content-center{
+     justify-content: center!important;//justify-content属性定义了项目在主轴上的对齐方式。
+ }
+
+ // 隐藏百度地图logo
+.BMap_cpyCtrl, .anchorBL{
+    display: none;
+}
+.wrap{
+    padding: 6px 0;
+    position: relative;
+}
+.necessary {
+    color: red;
+}
+.readonly-span{
+    display: inline-block;
+    min-width: 60%;
+    border-bottom: 1px solid #333;
+}
+.form-control-select {
+    height: 34px;
+    width: 180px;
+    font-size: 14px;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+.form-control-input{
+    display: inline-block;
+    width: 195px;
+    vertical-align: middle;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+.form-control-input:focus {
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+}
+.form-control-search-btn{
+    height: 34px;
+    width: 34px;
+    position: absolute;
+    padding: 0;
+    margin: 0 -4px;
+    top: 6px;
+}
+//  地图
+.map-container-ios{
+    height: 240px;
+    width: 100%;
+}
+.map-container-md{
+    height: 240px;
+    width: 100%;
+}
+// 二维码
+.barcode-span{
+    position: absolute;
+    right: 10px;
+    bottom: 6px;
+    display: inline-block;
+    height: 32px;
+    width: 32px;
+    background-image: url(../assets/imgs/barcode-scan.png);
+}
+.bind-parent {
+    position: relative;
+}
+
+.bind-ok {
+    position: absolute;
+    left: 30px;
+    top: 28px;
+    display: inline-block;
+    height: 48px;
+    width: 48px;
+    background-image: url(../assets/imgs/ok.png);
+}
+.bind-offline {
+        position: absolute;
+    left: 30px;
+    top: 28px;
+    display: inline-block;
+    height: 48px;
+    width: 48px;
+    background-image: url(../assets/imgs/false.png);
+}
+.bind-waiting {
+    position: absolute;
+    left: 30px;
+    top: 28px;
+    display: inline-block;
+    height: 48px;
+    width: 48px;
+    background-image: url(../assets/imgs/wait.png);
+}
+.barcode{
+    font-size: 3.2em;
+}
+
+// 蒙板
+.mask{
+    position: absolute;
+    left: 0px;
+    height: 82%;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    z-index: 10000;
+}
+.waiting {
+    width: 75%;
+    height: 100px;
+    background: #e0e0e0;
+
+}

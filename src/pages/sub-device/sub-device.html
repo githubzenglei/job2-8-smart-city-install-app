@@ -1,0 +1,97 @@
+<!--
+  Generated template for the SubdevicePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>安装子设备</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div class="mask box-flex align-items-center justify-content-center" *ngIf="binding !== 0">
+    <div class="waiting box-flex align-items-center justify-content-center bind-parent">
+      <div *ngIf="binding == 1">
+        <span class="bind-waiting"></span>
+        <h2>安装中</h2>
+      </div>
+      <div *ngIf="binding == 2">
+        <span class="bind-ok" *ngIf="device.online"></span>
+        <span class="bind-offline" *ngIf="!device.online"></span>
+        <h2 *ngIf="device.online">设备上线</h2>
+        <h2 *ngIf="!device.online">设备离线</h2>
+      </div>
+    </div>
+  
+  </div>
+  <div style="min-height: 60%">
+
+      <div class="necessary" style="height: 20px;">{{error}}</div>
+      <div class="wrap">
+        <span class="necessary">*</span>
+        <label for="设备型号">设备型号:</label>
+        <!-- <input type="text" placeholder="请输入产品型号" class="form-control-input" style="width: 210px;" [(ngModel)]="device.id" [ngModelOptions]="{standalone: true}" /> -->
+        <select name="profile" [(ngModel)]="currentModel" class="form-control form-control-input"
+          style="width: 210px;">
+          <option *ngFor="let index of deviceModels" [ngValue]="index">
+            {{ index.name }}
+          </option>
+        </select>
+      
+      </div>
+      <div class="wrap">
+        <span class="necessary">*</span>
+        <label for="设备编号">设备编号:</label>
+        <input type="text" placeholder="请输入设备编号" class="form-control-input" style="width: 210px;" [(ngModel)]="device.name"
+          [ngModelOptions]="{standalone: true}" (ngModelChange)="valueChange($event)" />
+      
+        <span class="barcode-span lsq-cursor" (click)="qrScanners('sub')"></span>
+      
+      </div>
+      <div class="wrap">
+        <span class="necessary">*</span>
+        <label for="产品型号">网关型号:</label>
+        <!-- <input type="text" placeholder="请输入产品型号" class="form-control-input" style="width: 210px;" [(ngModel)]="device.id" [ngModelOptions]="{standalone: true}" /> -->
+        <select name="profile" [(ngModel)]="currentGWModel"  class="form-control form-control-input"
+          style="width: 210px;">
+          <option *ngFor="let index of deviceGWModels" [ngValue]="index">
+            {{ index.name }}
+          </option>
+        </select>
+      
+      </div>
+      <div class="wrap">
+        <span class="necessary">*</span>
+        <label for="所属网关">所属网关:</label>
+        <input type="text" placeholder="请输入网关编号" class="form-control-input" [(ngModel)]="device.pname" [ngModelOptions]="{standalone: true}"
+          (ngModelChange)="valueChange($event)" />
+        <button ion-button small class="form-control-search-btn" (click)="getDeviceByName(device.pname)">
+          <ion-icon ios="ios-search" md="md-search"></ion-icon>
+        </button>
+      
+        <span class="barcode-span lsq-cursor" (click)="qrScanners('parent')"></span>
+      
+      </div>
+      <div class="wrap">
+        <span>&nbsp;</span>
+        <label for="网关状态">网关状态:</label>
+        <span><a *ngIf="gwdevice.description">{{gwdevice.description}}</a></span>
+        <span><a *ngIf="gwdevice.online">在线</a></span>
+        <span><a *ngIf="gwdevice.online === ''"></a></span>
+        <span><a *ngIf="gwdevice.online === false">离线</a></span>
+      </div>
+      
+      <div style="width: 100%;height: 170px;"></div>
+  </div>
+  
+
+  <button ion-button full (click)="addDevice()" *ngIf="binding == 0">新增</button>
+  <button ion-button full *ngIf="binding == 1" color="darklingt" disabled> 等待({{countDown}})</button>
+  <button ion-button full (click)="goToDevicePositionPage()" *ngIf="binding == 2">继续绑定安装点</button>
+
+</ion-content>
