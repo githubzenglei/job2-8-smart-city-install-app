@@ -136,7 +136,7 @@ export class SubDevicePositionPage {
         },
         error: function (error) {
           console.log(error)
-          if (error['error'].message && error['error'].message.indexOf('expired') > 0) {
+          if (error['error'].message && error['error'].message.indexOf('Access Denied') > 0) {
             that.loginService.logout();// 退出登录
           }
           else {
@@ -179,7 +179,7 @@ export class SubDevicePositionPage {
         },
         error: function (error) {
           console.log(error)
-          if (error['error'].message && error['error'].message.indexOf('expired') > 0) {
+          if (error['error'].message && error['error'].message.indexOf('Access Denied') > 0) {
             that.loginService.logout();// 退出登录
           }
 
@@ -216,7 +216,7 @@ export class SubDevicePositionPage {
         },
         error: function (error) {
           console.log(error)
-          if (error['error'].message && error['error'].message.indexOf('expired') > 0) {
+          if (error['error'].message && error['error'].message.indexOf('Access Denied') > 0) {
             that.loginService.logout();// 退出登录
           }
 

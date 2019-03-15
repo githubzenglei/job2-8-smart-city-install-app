@@ -75,7 +75,7 @@ export class SubDevicePage {
         },
         error: function (error) {
           console.log(error)
-          if (error['error'].message && error['error'].message.indexOf('expired') > 0) {
+          if (error['error'].message && error['error'].message.indexOf('Access Denied') > 0) {
             that.loginService.logout();// 退出登录
           } else if (error.message && error.message.indexOf('Http failure') > 0) {
             that.error = error.statusText;
@@ -114,7 +114,7 @@ export class SubDevicePage {
         },
         error: function (error) {
           console.log(error)
-          if (error['error'].message && error['error'].message.indexOf('expired') > 0) {
+          if (error['error'].message && error['error'].message.indexOf('Access Denied') > 0) {
             that.loginService.logout();// 退出登录
           } else if (error.message && error.message.indexOf('Http failure') > 0) {
             that.error = error.statusText;
@@ -128,16 +128,16 @@ export class SubDevicePage {
   }
 
   // 获取网关设备信息
-  getDeviceByName(name) {
+  getDeviceByName(name, modelId) {
     if (!name || name == null || name == '') {
       return
     }
     const that = this;
     name = name.trim();
-    this.subDeviceService.getDeviceByName(name)
+    this.subDeviceService.getDeviceByName(name,modelId)
       .subscribe({
         next: function (val) {
-          that.gwdevice = val;
+          that.gwdevice = val[0];
 
         },
         complete: function () {
@@ -145,7 +145,7 @@ export class SubDevicePage {
         },
         error: function (error) {
           console.log(error)
-          if (error['error'].message && error['error'].message.indexOf('expired') > 0) {
+          if (error['error'].message && error['error'].message.indexOf('Access Denied') > 0) {
             that.loginService.logout();// 退出登录
           }
           else {
@@ -162,7 +162,8 @@ export class SubDevicePage {
     }
     const that = this;
     name = name.trim();
-    this.subDeviceService.getDeviceByName(name)
+    const modelId = this.currentModel.id;
+    this.subDeviceService.getDeviceByName(name, modelId)
       .subscribe({
         next: function (val) {
           if (val.online) {
@@ -177,7 +178,7 @@ export class SubDevicePage {
         },
         error: function (error) {
           console.log(error)
-          if (error['error'].message && error['error'].message.indexOf('expired') > 0) {
+          if (error['error'].message && error['error'].message.indexOf('Access Denied') > 0) {
             that.loginService.logout();// 退出登录
           }
           else {
@@ -213,7 +214,7 @@ export class SubDevicePage {
         },
         error: function (error) {
           console.log(error)
-          if (error['error'].message && error['error'].message.indexOf('expired') > 0) {
+          if (error['error'].message && error['error'].message.indexOf('Access Denied') > 0) {
             that.loginService.logout();// 退出登录
           }
           else {

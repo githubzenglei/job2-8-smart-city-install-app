@@ -56,7 +56,6 @@
       <div class="wrap">
         <span class="necessary">*</span>
         <label for="产品型号">网关型号:</label>
-        <!-- <input type="text" placeholder="请输入产品型号" class="form-control-input" style="width: 210px;" [(ngModel)]="device.id" [ngModelOptions]="{standalone: true}" /> -->
         <select name="profile" [(ngModel)]="currentGWModel"  class="form-control form-control-input"
           style="width: 210px;">
           <option *ngFor="let index of deviceGWModels" [ngValue]="index">
@@ -70,7 +69,7 @@
         <label for="所属网关">所属网关:</label>
         <input type="text" placeholder="请输入网关编号" class="form-control-input" [(ngModel)]="device.pname" [ngModelOptions]="{standalone: true}"
           (ngModelChange)="valueChange($event)" />
-        <button ion-button small class="form-control-search-btn" (click)="getDeviceByName(device.pname)">
+        <button ion-button small class="form-control-search-btn" (click)="getDeviceByName(device.pname,currentGWModel.id)">
           <ion-icon ios="ios-search" md="md-search"></ion-icon>
         </button>
       

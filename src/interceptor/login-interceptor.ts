@@ -52,10 +52,11 @@ export class LoginInterceptor implements HttpInterceptor { //  implements HttpIn
                 }
                 return of(event); // break;
 
-            case 500: // 过期状态码
-                if (event['error'].message && event['error'].message.indexOf('expired') > 0) {
-                    that.logout();
-                }
+            case 403: // 过期状态码
+                // if (event['error'].message && event['error'].message.indexOf('expired') > 0) {
+                //     that.logout();
+                // }
+                that.logout();
                 return _throw(event); // break;
             default:
                 return _throw(event); // break;

@@ -90,7 +90,7 @@ export class GatewayPositionPage{
         },
         error: function (error) {
           console.log(error)
-          if (error['error'].message && error['error'].message.indexOf('expired') > 0) {
+          if (error['error'].message && error['error'].message.indexOf('Access Denied') > 0) {
             that.loginService.logout();// 退出登录
           } else if (error.message && error.message.indexOf('Http failure') > 0) {
             that.error = error.statusText;
@@ -261,7 +261,7 @@ export class GatewayPositionPage{
       },
       error: function (error) {
         console.log(error)
-        if (error['error'].message && error['error'].message.indexOf('expired') > 0) {
+        if (error['error'].message && error['error'].message.indexOf('Access Denied') > 0) {
           that.loginService.logout();// 退出登录
         }
 
@@ -294,7 +294,7 @@ export class GatewayPositionPage{
       },
       error: function (error) {
         console.log(error)
-        if (error['error'].message && error['error'].message.indexOf('expired') > 0) {
+        if (error['error'].message && error['error'].message.indexOf('Access Denied') > 0) {
           that.loginService.logout();// 退出登录
         }
         else {

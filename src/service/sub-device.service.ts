@@ -87,8 +87,8 @@ export class SubDeviceService {
     }
 
     // 获取设备信息
-    getDeviceByName(name): Observable<any> {
-        return this.http.get(`${this.url}/device/getByName?name=${name}`)
+    getDeviceByName(name, modelId): Observable<any> {
+        return this.http.get(`${this.url}/device/getByName?name=${name}&modelId=${modelId}`)
             .pipe(
                 map((res) => {
                     return res;
