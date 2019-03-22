@@ -1,0 +1,4 @@
+#Thu Mar 21 18:01:01 CST 2019
+base.0=D\:\\lsq\\job2-8-smart-city-install-app\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+path.0=classes.dex
+renamed.0=classes.dex

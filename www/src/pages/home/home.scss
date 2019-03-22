@@ -1,0 +1,126 @@
+page-home {
+    .datetime-ios, .datetime-md {
+        padding: 0;
+    }
+    .input-wrapper {
+        font-size:12px !important;
+    }
+    .scroll-content {
+        padding: 0 !important;
+    }
+    .map-container-ios{
+        height: calc(100vh - 100px);
+        width: 100%;
+    }
+    .map-container-md{
+        height: calc(100vh - 114px);
+        width: 100%;
+    }
+
+    .control-light-ios {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            font-size: 12px;
+            z-index: 3000;
+    }
+
+    .control-light-md {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            font-size: 12px;
+            z-index: 3000;
+    }
+    .datetime-text, .control-light-title {
+         font-size: 12px;
+    }
+    .lsq-ionic{
+
+        color: #488aff;
+
+    }
+    .lsq-text-center{
+        text-align: center;
+    }
+    .lsq-input {
+        background: #e0e0e0;
+        input {
+                height: 28px;
+                margin: 0;
+        }
+    }
+
+    .btn-outline-info {
+        color: #36a3f7;
+        background-color: transparent;
+        background-image: none;
+        border-color: #36a3f7;
+        border: 1px solid;
+    }
+
+    .btn-ctr {
+        height: 26px;
+        font-size:12px;
+    }
+
+    .lsq-btn-wap {
+        margin: 8px 16px;
+    }
+    .light-close {
+        position: absolute;
+        right: 25px;
+        align-items: center;
+        display: flex;
+    }
+    .bottom-items {
+        align-items: center;
+        display: flex;
+        font-size: 12px;
+    }
+
+    .search-seg-ios {
+        z-index: 300;
+        position: absolute;
+        bottom: 10px;
+        width: 100%;
+
+    }
+    .search-seg-md {
+        z-index: 300;
+        position: absolute;
+        bottom: 10px;
+        width: 100%;
+
+    }
+
+    .seg-head {
+        width: 130px;
+        background: white;
+    }
+    .seg-content {
+        margin: 0 16px;
+        position: relative;
+
+        .search-btn {
+            position: absolute;
+            right: 45px;
+            bottom: 0px;
+            border: 0px;
+            padding: 0 7px;
+        }
+        .search-btn:hover, .search-btn:focus, .search-btn:active, {
+            background-color: white;
+        }
+    }
+
+    #r-result {
+        width: 100%;
+        max-height: 40%;
+        z-index: 10000;
+        position: absolute;
+        top: 0px;
+        overflow: auto;
+        border-bottom: 1px solid gray;
+    }
+}

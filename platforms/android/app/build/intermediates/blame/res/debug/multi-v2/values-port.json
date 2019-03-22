@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "D:\\lsq\\job2-8-smart-city-install-app\\platforms\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-port\\values-port.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\D0109\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.1.0.aar\\d5c37b9b62820c1b89fd12ad19898a55\\res\\values-port\\values-port.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "4",
+                        "startOffsets": "287",
+                        "endColumns": "55",
+                        "endOffsets": "338"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "55",
+                        "endOffsets": "106"
+                    }
+                }
+            ]
+        }
+    ]
+}
